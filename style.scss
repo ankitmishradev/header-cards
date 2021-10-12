@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Syncopate:wght@700&family=Ubuntu:wght@400;500;700&display=swap");
+
+$textColor: #fff;
+$primaryColor: #021859;
+$secondaryColor: #032ca6;
+$transitionTime: 0.4s;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  color: $textColor;
+  padding: 0;
+}
+
+.cards-container {
+  @include center();
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $secondaryColor;
+}
+
+.card {
+  @include center();
+  height: 20em;
+  width: 15em;
+  position: relative;
+  left: 0;
+  background-color: $primaryColor;
+  border-radius: 1.5em;
+  box-shadow: -1em 0.5em 1em rgba(0, 0, 0, 0.7);
+  transition: all $transitionTime ease-out;
+
+  &:not(:first-child) {
+    margin-left: -2.5em;
+  }
+
+  i {
+    position: relative;
+    font-size: 6em;
+    transition: all $transitionTime;
+  }
+
+  h3 {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: all $transitionTime;
+  }
+
+  &:hover {
+    transform: translateY(-1em);
+
+    ~ .card {
+      position: relative;
+      left: 2.5em;
+    }
+
+    i {
+      transform: translateY(-0.5em);
+    }
+
+    h3 {
+      bottom: 15%;
+      opacity: 1;
+    }
+  }
+}
