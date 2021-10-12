@@ -2,7 +2,7 @@
 
 An awesome set of card to be used as a header or an introductory section in website. Simple SCSS is used to create these cards.
 
-Visit this [pen]() to see it in action.
+Visit this [pen](https://codepen.io/ankitmishradev/pen/bGrGVmv) to see it in action.
 
 🎉 _Happy Coding!_ 🎉
 
